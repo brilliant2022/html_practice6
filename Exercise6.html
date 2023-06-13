@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        button{width: 180px;
+               height:60px;
+            background-color: lightblue;
+            border:none;}
+        div{position:absolute;
+                left: 50px;
+                top:135px;
+                border:3px black solid;
+                width: 600px;
+               height:400px;}
+        button:hover{color: white;
+        background-color: blue;
+        } 
+        img{position: absolute;
+            left:0px;
+            top:80px;
+        animation-name: ex;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;}
+        @keyframes ex{
+            0%{left: 0px; top:80px;}
+            25%{left: 660px; top:80px;}
+            50%{left: 660px; top:545px;}
+            75%{left:0px; top:545px;}
+            100%{left: 0px; top:80px;}
+            } 
+        button:hover ~ img{animation-name: ex;
+        animation-duration: 8s;
+        animation-direction: reverse;} 
+    </style>
+
+    <meta charset="utf-8" />
+</head>
+<body>
+    <button onclick="myFunction()">Ask My Name</button>
+    <button onclick="document.getElementById('img').style.animation='ex 3s linear infinite';">Run Faster!</button>
+    <button onclick="document.getElementById('img').src='./ncku-logo2.jpg';">Another Logo</button><br><br>
+    <img id='img' src="./ncku-logo1.jpg" height="50px" width="50px">
+    <div id="id"></div>
+    <script>
+        function myFunction(){
+             var person=prompt("Input your name");
+        document.getElementById("id").innerHTML ="Howdy!"+ person;
+        }
+    </script>
+</body>
+</html>
